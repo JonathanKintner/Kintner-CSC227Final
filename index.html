@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Jonathan Kintner CSC 227 Final</title>
+        <script type="text/javascript">
+            function randomize() {
+                document.getElementById("output").innerHTML = "";
+                console.log("pressed");
+                var inputLines = document.getElementById("input").value.split('\n');//grabs values
+                inputLines = inputLines.filter(function (entry) { return entry.trim() != ''; })//removes empty spaces
+                for (var i = inputLines.length-1; i > 0; i--) {//shuffles array
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = inputLines[i];
+                    inputLines[i] = inputLines[j];
+                    inputLines[j] = temp;
+                }
+                for (var i = 0; i < inputLines.length; i++) {
+                    if (inputLines[i] != "") {
+                        document.getElementById("output").innerHTML += "<br/>" + (i + 1) + ": " + inputLines[i];//prints to output
+                    }
+                }
+            }
+            function clearinputs() {
+                console.log("Inputs cleared");
+                document.getElementById("input").value = "";//removes text from input box
+            }
+        </script>   
+    </head>
+    <body>
+        <h1>Enter a list of items below and then hit "Randomize" re-arrange your list!</h1>
+        <textarea name="Text1" cols="40" rows="5" id="input"></textarea>
+        <br />
+        <button onclick="randomize()">Randomize!</button>
+        <button onclick="clearinputs()">Clear</button>
+        <br />
+        <h1>Output:</h1>
+        <br />
+        <p id="output"></p>
+    </body>
+</html>
