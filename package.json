@@ -1,12 +1,15 @@
 {
-  "name": "nodejs-web-app1",
-  "version": "0.0.0",
-  "description": "NodejsWebApp1",
+  "name": "nodejs-CSC227-Final",
+  "version": "0.0.1",
+  "description": "Jonathan Kintner CSC227 Final",
+  "main": "app.js", 
+  "dependencies": {
+  },
   "scripts": {
-  "start": "node app.js
-},
-  "main": "app.js",
-  "author": {
-    "name": "Jonathan Kintner"
+    "start": "node app.js" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JonathanKintner/Kintner-CSC227Final"
   }
 }
